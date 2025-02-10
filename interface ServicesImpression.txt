@@ -2,32 +2,31 @@ interface ServicesImpression {
     void imprimer(String document);
 }
 class ImprimanteLaser implements ServicesImpression {
-    @Override
+    //@Override
     public void imprimer(String document) {
-        System.out.println("Impression du document : " + document
+        System.out.println("Impression du document:" + document
 
-                + " sur une imprimante laser.");
+                + "sur une imprimante laser");
     }
 }
-class ImprimanteJetEncre implements ServicesImpression {
-    @Override
+class ImprimanteJet implements ServicesImpression {
+    //@Override
     public void imprimer(String document) {
-        System.out.println("Impression du document : " + document
-                + " sur une imprimante jet d'encre.");
+        System.out.println("Impression du document:" + document
+                + "sur une imprimante jet");
 
-    }
-}
-class PC {
+    }}
+class PC{
     public void envoyerImpression(String document, ServicesImpression imprimante) {
-        System.out.println("Le PC prépare le document pour impression.");
+        System.out.println("PC prepare le document pour une impression");
         imprimante.imprimer(document);
     }}
 public class Main {
     public static void main(String[] args) {
-        PC pc = new PC();
-        ImprimanteLaser laser= new ImprimanteLaser();
-        ImprimanteJetEncre jetencre= new ImprimanteJetEncre();
-        pc.envoyerImpression("Rapport ", laser);
-        pc.envoyerImpression("Facture ", jetencre);
+        PC pc1 = new PC();
+        ImprimanteLaser lasr= new ImprimanteLaser();
+        ImprimanteJet jet= new ImprimanteJet();
+        pc1.envoyerImpression("Rapport ", lasr);
+        pc1.envoyerImpression("Facture ", jet);
     }
 }
